@@ -7,19 +7,54 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; color: #333; line-height: 1.6; background: #f7f7f7; }
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      color: #333; 
+      line-height: 1.6; 
+      background: #f7f7f7;
+      position: relative;
+    }
+    
+    /* Технологічний фон */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        linear-gradient(rgba(247, 247, 247, 0.9), rgba(247, 247, 247, 0.9)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="none" stroke="%23ddd" stroke-width="1"/></svg>');
+      background-size: 50px 50px;
+      z-index: -1;
+      opacity: 0.6;
+    }
+    
     header {
-      background: #222;
+      background: rgba(34, 34, 34, 0.95);
       color: #fff;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
       z-index: 1000;
+      backdrop-filter: blur(5px);
     }
     header nav { display: flex; justify-content: space-between; align-items: center; }
-    header nav a { color: #fff; text-decoration: none; margin-left: 1.5rem; font-weight: bold; }
+    header nav a { 
+      color: #fff; 
+      text-decoration: none; 
+      margin-left: 1.5rem; 
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #ff6600;
+    }
     .hero {
-      background: url('https://darkage17.github.io/mufel-pechi/img/hero.jpg') center/cover no-repeat;
+      background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://darkage17.github.io/mufel-pechi/img/hero.jpg') center/cover no-repeat;
       height: 90vh;
       display: flex;
       justify-content: center;
@@ -28,8 +63,18 @@
       text-align: center;
       padding: 2rem;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .hero h1 { 
+      font-size: 3rem; 
+      margin-bottom: 1rem; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .hero p { 
+      font-size: 1.2rem; 
+      margin-bottom: 2rem; 
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .btn-primary {
       background: #ff6600;
       color: #fff;
@@ -37,29 +82,154 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
+      display: inline-block;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
     }
-    section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .btn-primary:hover {
+      background: #e65c00;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    section { 
+      padding: 4rem 2rem; 
+      max-width: 1200px; 
+      margin: 0 auto;
+      position: relative;
+    }
     .advantages, .products, .about, .contact {
-      background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); margin-bottom: 2rem;
+      background: rgba(255,255,255,0.95);
+      border-radius: 8px; 
+      box-shadow: 0 0 20px rgba(0,0,0,0.1); 
+      margin-bottom: 2rem;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(0,0,0,0.05);
     }
     .section-title {
-      text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #333;
+      text-align: center; 
+      font-size: 2rem; 
+      margin-bottom: 2rem; 
+      color: #333;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #ff6600;
+      margin: 10px auto;
     }
     .grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 2rem;
     }
     .card {
-      background: #f1f1f1; padding: 1.5rem; border-radius: 8px; text-align: center;
+      background: #fff; 
+      padding: 1.5rem; 
+      border-radius: 8px; 
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
     .card img {
-      width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 1rem;
+      width: 100%; 
+      height: 200px; 
+      object-fit: cover; 
+      border-radius: 5px; 
+      margin-bottom: 1rem;
+      border: 1px solid #eee;
     }
-    .contact form { display: grid; gap: 1rem; }
+    .contact form { 
+      display: grid; 
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
     input, textarea {
-      padding: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%;
+      padding: 1rem; 
+      border-radius: 5px; 
+      border: 1px solid #ddd; 
+      width: 100%;
+      font-family: inherit;
+      transition: all 0.3s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #ff6600;
+      box-shadow: 0 0 0 3px rgba(255,102,0,0.2);
     }
     footer {
-      background: #222; color: #fff; text-align: center; padding: 1rem; font-size: 0.9rem;
+      background: #222; 
+      color: #fff; 
+      text-align: center; 
+      padding: 2rem; 
+      font-size: 0.9rem;
+    }
+    
+    /* Анімації */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    section {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    /* Додаткові стилі для продуктів */
+    .product-features {
+      text-align: left;
+      margin-top: 1rem;
+    }
+    
+    .product-features li {
+      margin-bottom: 0.5rem;
+      list-style-type: none;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .product-features li::before {
+      content: "✓";
+      color: #ff6600;
+      position: absolute;
+      left: 0;
+    }
+    
+    /* Додатковий блок з технологіями */
+    .tech-specs {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+    
+    .tech-specs h4 {
+      margin-bottom: 1rem;
+      color: #ff6600;
+    }
+    
+    /* Адаптивність */
+    @media (max-width: 768px) {
+      header nav {
+        flex-direction: column;
+      }
+      
+      header nav a {
+        margin: 0.5rem 0;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -79,7 +249,7 @@
   <section class="hero">
     <div>
       <h1>Muфельні печі на замовлення</h1>
-      <p>Надійність. Якість. Індивідуальний підхід.</p>
+      <p>Надійність. Якість. Індивідуальний підхід. Виготовляємо професійні муфельні печі для лабораторій, виробництва та творчості.</p>
       <a href="#contact" class="btn-primary">Замовити консультацію</a>
     </div>
   </section>
@@ -87,10 +257,22 @@
   <section id="advantages" class="advantages">
     <h2 class="section-title">Наші переваги</h2>
     <div class="grid">
-      <div class="card">Індивідуальне виготовлення під ваші задачі</div>
-      <div class="card">Температура до 1300°C</div>
-      <div class="card">Гарантія 12 місяців</div>
-      <div class="card">Швидка доставка по Україні</div>
+      <div class="card">
+        <h3>Індивідуальний підхід</h3>
+        <p>Виготовлення під ваші конкретні задачі та вимоги</p>
+      </div>
+      <div class="card">
+        <h3>Висока температура</h3>
+        <p>Температура до 1300°C з точністю ±5°C</p>
+      </div>
+      <div class="card">
+        <h3>Гарантія</h3>
+        <p>Гарантія 12 місяців на всі вироби</p>
+      </div>
+      <div class="card">
+        <h3>Доставка</h3>
+        <p>Швидка доставка по всій Україні</p>
+      </div>
     </div>
   </section>
 
@@ -100,39 +282,95 @@
     <div class="card">
       <img src="img/shahtna.jpg" alt="Шахтна піч" style="width:100%; border-radius:8px; margin-bottom:1rem;">
       <h3>Шахтна піч</h3>
-      <p>Вертикальне завантаження<br>Обʼєм: до 100 л<br>Температура: до 1300°C<br>Ідеальна для термообробки металу та кераміки</p>
+      <p>Вертикальне завантаження для зручності роботи</p>
+      
+      <ul class="product-features">
+        <li>Об'єм: до 100 л</li>
+        <li>Температура: до 1300°C</li>
+        <li>Точність контролю: ±3°C</li>
+        <li>Матеріал муфеля: вогнетривка кераміка</li>
+      </ul>
+      
+      <div class="tech-specs">
+        <h4>Технічні особливості:</h4>
+        <p>Ідеальна для термообробки металу, кераміки та інших матеріалів. Оснащена цифровим контролером температури.</p>
+      </div>
     </div>
+    
     <div class="card">
       <img src="img/kamerna.jpg" alt="Камерна піч" style="width:100%; border-radius:8px; margin-bottom:1rem;">
       <h3>Камерна піч</h3>
-      <p>Горизонтальне завантаження<br>Обʼєм: 5–50 л<br>Температура: до 1250°C<br>Підходить для лабораторій та виробництва</p>
+      <p>Горизонтальне завантаження для зручності</p>
+      
+      <ul class="product-features">
+        <li>Об'єм: 5–50 л</li>
+        <li>Температура: до 1250°C</li>
+        <li>Нагрівальні елементи: нихромові</li>
+        <li>Час нагріву: 60-90 хв до 1000°C</li>
+      </ul>
+      
+      <div class="tech-specs">
+        <h4>Технічні особливості:</h4>
+        <p>Підходить для лабораторій та виробництва. Має вбудовану систему безпеки та термопару для точних вимірювань.</p>
+      </div>
     </div>
+    
     <div class="card">
       <img src="img/laboratorna.jpg" alt="Лабораторна піч" style="width:100%; border-radius:8px; margin-bottom:1rem;">
       <h3>Лабораторна піч</h3>
-      <p>Компактна та точна<br>Обʼєм: 2–8 л<br>Температура: до 1200°C<br>Для аналітики, фарфору та досліджень</p>
+      <p>Компактна та точна для професійного використання</p>
+      
+      <ul class="product-features">
+        <li>Об'єм: 2–8 л</li>
+        <li>Температура: до 1200°C</li>
+        <li>Програмування: до 10 етапів</li>
+        <li>Енергоспоживання: 1.5-3 кВт</li>
+      </ul>
+      
+      <div class="tech-specs">
+        <h4>Технічні особливості:</h4>
+        <p>Для аналітики, фарфору та наукових досліджень. Оснащена PID-регулятором для стабільної температури.</p>
+      </div>
     </div>
   </div>
 </section>
 
   <section id="about" class="about">
     <h2 class="section-title">Про нас</h2>
-    <p>Ми виготовляємо муфельні печі з 2023 року. Кожен виріб проходить контроль якості та тестування. Наша мета — надати клієнтам надійний інструмент для роботи. Працюємо по всій Україні та за кордон.</p>
+    <p>Ми виготовляємо муфельні печі з 2023 року. Кожен виріб проходить контроль якості та тестування. Наша мета — надати клієнтам надійний інструмент для роботи.</p>
+    
+    <div class="grid" style="margin-top: 2rem;">
+      <div class="card">
+        <h3>Наша місія</h3>
+        <p>Забезпечити якісними та надійними муфельними печами професіоналів та ентузіастів у різних галузях.</p>
+      </div>
+      <div class="card">
+        <h3>Наші клієнти</h3>
+        <p>Ювелірні майстерні, керамісти, металургійні підприємства, наукові лабораторії та художники.</p>
+      </div>
+    </div>
   </section>
 
   <section id="contact" class="contact">
     <h2 class="section-title">Контакти</h2>
     <form>
-      <input type="text" placeholder="Ваше ім’я" required>
+      <input type="text" placeholder="Ваше ім'я" required>
       <input type="tel" placeholder="Телефон" required>
       <input type="email" placeholder="Email">
       <textarea rows="4" placeholder="Ваше повідомлення"></textarea>
       <button class="btn-primary" type="submit">Надіслати</button>
     </form>
+    
+    <div style="text-align: center; margin-top: 2rem;">
+      <p>Телефон: +380 XX XXX XX XX</p>
+      <p>Email: info@darkage-pechi.com</p>
+      <p>Графік роботи: Пн-Пт, 9:00-18:00</p>
+    </div>
   </section>
 
   <footer>
     <p>© 2025 DarkAge. Всі права захищено.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Виготовлення муфельних печей на замовлення</p>
   </footer>
 </body>
 </html>
