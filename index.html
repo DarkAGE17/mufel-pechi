@@ -3,201 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Муфельні печі на замовлення</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <title>Muфельні печі на замовлення | DarkAge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Rubik', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; color: #333; line-height: 1.6; background: #f7f7f7; }
     header {
-      background-color: #222831;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      background: #222;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    nav {
-      background-color: #00adb5;
+    header nav { display: flex; justify-content: space-between; align-items: center; }
+    header nav a { color: #fff; text-decoration: none; margin-left: 1.5rem; font-weight: bold; }
+    .hero {
+      background: url('https://darkage17.github.io/mufel-pechi/img/hero.jpg') center/cover no-repeat;
+      height: 90vh;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      padding: 12px 0;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
     }
-    nav a {
-      color: white;
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .btn-primary {
+      background: #ff6600;
+      color: #fff;
+      padding: 0.8rem 2rem;
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
+      font-weight: bold;
+      border-radius: 5px;
     }
-    nav a:hover {
-      color: #222831;
-    }
-    .banner {
-      background: #393e46;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .banner h1 {
-      font-size: 2.7rem;
-      margin-bottom: 10px;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      color: #222831;
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-    ul {
-      padding-left: 20px;
-    }
+    section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .advantages, .products, .about, .contact { background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+    .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #333; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .card { background: #f1f1f1; padding: 1.5rem; border-radius: 8px; text-align: center; }
+    .contact form { display: grid; gap: 1rem; }
+    input, textarea { padding: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
     footer {
-      background-color: #222831;
-      color: white;
+      background: #222;
+      color: #fff;
       text-align: center;
-      padding: 20px;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-family: inherit;
-    }
-    .contact-form button {
-      background-color: #00adb5;
-      border: none;
-      padding: 12px 25px;
-      font-size: 1rem;
-      color: white;
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .contact-form button:hover {
-      background-color: #007b80;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .gallery img:hover {
-      transform: scale(1.03);
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Муфельні печі на замовлення</h1>
-    <p>Індивідуальні рішення для вашого виробництва</p>
+    <nav>
+      <div><strong>DarkAge</strong></div>
+      <div>
+        <a href="#advantages">Переваги</a>
+        <a href="#products">Продукція</a>
+        <a href="#about">Про нас</a>
+        <a href="#contact">Контакти</a>
+      </div>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">Про нас</a>
-    <a href="#products">Наші печі</a>
-    <a href="#advantages">Переваги</a>
-    <a href="#gallery">Галерея</a>
-    <a href="#contacts">Контакти</a>
-  </nav>
-
-  <div class="banner">
-    <h1>Виготовлення муфельних печей з індивідуальними параметрами</h1>
-    <p>Надійність, точність, довговічність</p>
-  </div>
-
-  <section id="about">
-    <h2>Про нас</h2>
-    <p>Ми спеціалізуємося на виготовленні муфельних печей на замовлення з урахуванням усіх побажань клієнта. Використовуємо лише якісні матеріали та сучасні технології. Забезпечуємо консультацію, розробку, виготовлення та сервісне обслуговування.</p>
-  </section>
-
-  <section id="products">
-    <h2>Наші муфельні печі</h2>
-    <p>Пропонуємо різноманітні варіанти печей для лабораторій, майстерень, виробничих ліній. Можлива повна персоналізація:</p>
-    <ul>
-      <li>Температурний діапазон до 1200°C або більше</li>
-      <li>Об’єм камери за вашим запитом</li>
-      <li>Тип керування: аналогове або цифрове</li>
-      <li>Енергоефективна ізоляція</li>
-    </ul>
-    <p><strong>Основні типи печей:</strong></p>
-    <ul>
-      <li><strong>Лабораторні:</strong> для аналітичних і дослідницьких цілей</li>
-      <li><strong>Промислові:</strong> для термічної обробки матеріалів у виробничих умовах</li>
-      <li><strong>Художні:</strong> для випалу кераміки, скла та емалі</li>
-    </ul>
-
-    <h3>Технічні характеристики</h3>
-    <p><strong>Максимальна температура:</strong> до 1300&nbsp;°C<br>
-    <strong>Робоча температура:</strong> 1200–1250&nbsp;°C</p>
-
-    <h3>Різновиди муфельних печей</h3>
-    <ul>
-      <li><strong>Лабораторні муфельні печі СНО:</strong> до 1360&nbsp;°C</li>
-      <li><strong>Камерні електропечі СНО:</strong> до 600&nbsp;°C</li>
-      <li><strong>Шахтні печі СШО:</strong> до 1360&nbsp;°C</li>
-    </ul>
-  </section>
-
-  <section id="advantages">
-    <h2>Чому обирають нас</h2>
-    <ul>
-      <li>Індивідуальний підхід до кожного клієнта</li>
-      <li>Власне виробництво</li>
-      <li>Гарантія на продукцію</li>
-      <li>Професійна консультація</li>
-    </ul>
-  </section>
-
-  <section id="gallery">
-    <h2>Наші роботи</h2>
-    <p>Приклади виготовлених муфельних печей:</p>
-    <div class="gallery">
-      <img src="images/pech1.jpg" alt="Муфельна піч 1">
-      <img src="images/pech2.jpg" alt="Муфельна піч 2">
-      <img src="images/pech3.jpg" alt="Муфельна піч 3">
+  <section class="hero">
+    <div>
+      <h1>Muфельні печі на замовлення</h1>
+      <p>Надійність. Якість. Індивідуальний підхід.</p>
+      <a href="#contact" class="btn-primary">Замовити консультацію</a>
     </div>
   </section>
 
-  <section id="contacts">
-    <h2>Контакти</h2>
-    <p>Зв’яжіться з нами для консультації або замовлення:</p>
-    <div class="contact-form">
-      <form>
-        <input type="text" placeholder="Ваше ім’я" required>
-        <input type="email" placeholder="Ваш Email" required>
-        <textarea placeholder="Ваше повідомлення" rows="5" required></textarea>
-        <button type="submit">Надіслати</button>
-      </form>
+  <section id="advantages" class="advantages">
+    <h2 class="section-title">Наші переваги</h2>
+    <div class="grid">
+      <div class="card">Індивідуальне виготовлення під ваші задачі</div>
+      <div class="card">Температура до 1300°C</div>
+      <div class="card">Гарантія 12 місяців</div>
+      <div class="card">Швидка доставка по Україні</div>
     </div>
-    <p>Телефон: +380 977291054<br>Email: mufel.pechi@example.com</p>
+  </section>
+
+  <section id="products" class="products">
+    <h2 class="section-title">Наша продукція</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Піч МП-1</h3>
+        <p>Обʼєм: 5 л<br>Темп: до 1200°C</p>
+      </div>
+      <div class="card">
+        <h3>Піч МП-2</h3>
+        <p>Обʼєм: 8 л<br>Темп: до 1300°C</p>
+      </div>
+      <div class="card">
+        <h3>Піч для кераміки</h3>
+        <p>Обʼєм: 10 л<br>Темп: до 1250°C</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2 class="section-title">Про нас</h2>
+    <p>Ми виготовляємо муфельні печі з 2023 року. Кожен виріб проходить контроль якості та тестування. Наша мета — надати клієнтам надійний інструмент для роботи.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Контакти</h2>
+    <form>
+      <input type="text" placeholder="Ваше ім’я" required>
+      <input type="tel" placeholder="Телефон" required>
+      <input type="email" placeholder="Email">
+      <textarea rows="4" placeholder="Ваше повідомлення"></textarea>
+      <button class="btn-primary" type="submit">Надіслати</button>
+    </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 Муфельні Печі. Всі права захищено.</p>
+    <p>© 2025 DarkAge. Всі права захищено.</p>
   </footer>
 </body>
 </html>
