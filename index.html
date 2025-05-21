@@ -1,102 +1,126 @@
-<section id="products" class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-12 text-center">Наші муфельні печі</h2>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muфельні печі на замовлення | DarkAge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; color: #333; line-height: 1.6; background: #f7f7f7; }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header nav { display: flex; justify-content: space-between; align-items: center; }
+    header nav a { color: #fff; text-decoration: none; margin-left: 1.5rem; font-weight: bold; }
+    .hero {
+      background: url('https://darkage17.github.io/mufel-pechi/img/hero.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .btn-primary {
+      background: #ff6600;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+    .advantages, .products, .about, .contact { background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+    .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #333; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .card { background: #f1f1f1; padding: 1.5rem; border-radius: 8px; text-align: center; }
+    .contact form { display: grid; gap: 1rem; }
+    input, textarea { padding: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div><strong>DarkAge</strong></div>
+      <div>
+        <a href="#advantages">Переваги</a>
+        <a href="#products">Продукція</a>
+        <a href="#about">Про нас</a>
+        <a href="#contact">Контакти</a>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Фільтр за типом печі -->
-    <div class="mb-8 text-center">
-      <label for="filter" class="mr-2 font-semibold">Тип печі:</label>
-      <select id="filter" onchange="filterProducts()" class="px-4 py-2 border rounded">
-        <option value="all">Усі</option>
-        <option value="kam">Камерні</option>
-        <option value="lab">Лабораторні</option>
-        <option value="shaht">Шахтні</option>
-      </select>
+  <section class="hero">
+    <div>
+      <h1>Muфельні печі на замовлення</h1>
+      <p>Надійність. Якість. Індивідуальний підхід.</p>
+      <a href="#contact" class="btn-primary">Замовити консультацію</a>
     </div>
+  </section>
 
-    <div class="grid md:grid-cols-3 gap-8" id="product-grid">
-
-      <!-- Камерна муфельна піч -->
-      <div class="card bg-white shadow-lg rounded-2xl overflow-hidden" data-type="kam">
-        <img src="https://www.systopt.com.ua/images/item-kamerni-pechi-l-nagrivachi-na-trubkah.jpg" alt="Камерна муфельна піч" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Камерна муфельна піч</h3>
-          <p class="text-gray-700 mb-4 text-sm">
-            Обʼєм: 8,2 л<br>
-            Температура: до 1100°C<br>
-            Живлення: 220V<br>
-            Габарити камери: 200×300×133 мм<br>
-            Призначення: термообробка металів, кераміки, лабораторні дослідження
-          </p>
-          <button onclick="openModal('kam')" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Детальніше</button>
-        </div>
-      </div>
-
-      <!-- Лабораторна муфельна піч -->
-      <div class="card bg-white shadow-lg rounded-2xl overflow-hidden" data-type="lab">
-        <img src="https://miralab.in.ua/image/cache/catalog/products/pechi-mufelni-snol-ukrayina/snol-7-2-900-1100-1300-500x500.jpg" alt="Лабораторна муфельна піч" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Лабораторна муфельна піч SNOL 7.2/1300</h3>
-          <p class="text-gray-700 mb-4 text-sm">
-            Обʼєм: 7,2 л<br>
-            Температура: до 1300°C<br>
-            Живлення: 220V<br>
-            Габарити камери: 200×300×130 мм<br>
-            Призначення: наукові дослідження, термічна обробка матеріалів
-          </p>
-          <button onclick="openModal('lab')" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Детальніше</button>
-        </div>
-      </div>
-
-      <!-- Шахтна муфельна піч -->
-      <div class="card bg-white shadow-lg rounded-2xl overflow-hidden" data-type="shaht">
-        <img src="https://bortek.ua/image/cache/catalog/shahtnye-pechi/shahtnaya-pech-500x500.jpg" alt="Шахтна муфельна піч" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Шахтна муфельна піч</h3>
-          <p class="text-gray-700 mb-4 text-sm">
-            Обʼєм: 54 л<br>
-            Температура: до 1200°C<br>
-            Живлення: 380V<br>
-            Габарити камери: 400×400×400 мм<br>
-            Призначення: великогабаритні термообробки, промислове використання
-          </p>
-          <button onclick="openModal('shaht')" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Детальніше</button>
-        </div>
-      </div>
-
+  <section id="advantages" class="advantages">
+    <h2 class="section-title">Наші переваги</h2>
+    <div class="grid">
+      <div class="card">Індивідуальне виготовлення під ваші задачі</div>
+      <div class="card">Температура до 1300°C</div>
+      <div class="card">Гарантія 12 місяців</div>
+      <div class="card">Швидка доставка по Україні</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Модальні вікна -->
-<div id="modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
-  <div class="bg-white rounded-xl shadow-xl max-w-xl w-full p-6 relative">
-    <button onclick="closeModal()" class="absolute top-2 right-4 text-2xl">&times;</button>
-    <div id="modal-content"></div>
-  </div>
-</div>
+  <section id="products" class="products">
+    <h2 class="section-title">Наша продукція</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Піч МП-1</h3>
+        <p>Обʼєм: 5 л<br>Темп: до 1200°C</p>
+      </div>
+      <div class="card">
+        <h3>Піч МП-2</h3>
+        <p>Обʼєм: 8 л<br>Темп: до 1300°C</p>
+      </div>
+      <div class="card">
+        <h3>Піч для кераміки</h3>
+        <p>Обʼєм: 10 л<br>Темп: до 1250°C</p>
+      </div>
+    </div>
+  </section>
 
-<script>
-  function filterProducts() {
-    const type = document.getElementById('filter').value;
-    document.querySelectorAll('#product-grid .card').forEach(card => {
-      card.style.display = type === 'all' || card.dataset.type === type ? 'block' : 'none';
-    });
-  }
+  <section id="about" class="about">
+    <h2 class="section-title">Про нас</h2>
+    <p>Ми виготовляємо муфельні печі з 2023 року. Кожен виріб проходить контроль якості та тестування. Наша мета — надати клієнтам надійний інструмент для роботи.</p>
+  </section>
 
-  const modalData = {
-    kam: `<h2 class='text-xl font-bold mb-2'>Камерна муфельна піч</h2><p>Ця модель підходить для дрібносерійного виробництва, обпалення металу та кераміки. Укомплектована сучасними ТЕНами, що забезпечують стабільну роботу.</p>`,
-    lab: `<h2 class='text-xl font-bold mb-2'>Лабораторна піч SNOL 7.2/1300</h2><p>Застосовується для точних досліджень у лабораторіях. Висока точність контролю температури, енергоефективність і компактні розміри.</p>`,
-    shaht: `<h2 class='text-xl font-bold mb-2'>Шахтна муфельна піч</h2><p>Призначена для обробки великих об’ємів матеріалів. Має вертикальне завантаження, що зручно для промислового виробництва.</p>`
-  };
+  <section id="contact" class="contact">
+    <h2 class="section-title">Контакти</h2>
+    <form>
+      <input type="text" placeholder="Ваше ім’я" required>
+      <input type="tel" placeholder="Телефон" required>
+      <input type="email" placeholder="Email">
+      <textarea rows="4" placeholder="Ваше повідомлення"></textarea>
+      <button class="btn-primary" type="submit">Надіслати</button>
+    </form>
+  </section>
 
-  function openModal(type) {
-    document.getElementById('modal-content').innerHTML = modalData[type];
-    document.getElementById('modal').classList.remove('hidden');
-    document.getElementById('modal').classList.add('flex');
-  }
-
-  function closeModal() {
-    document.getElementById('modal').classList.add('hidden');
-    document.getElementById('modal').classList.remove('flex');
-  }
-</script>
+  <footer>
+    <p>© 2025 DarkAge. Всі права захищено.</p>
+  </footer>
+</body>
+</html>
