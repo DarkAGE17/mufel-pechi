@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://darkage17.github.io/mufel-pechi/sitemap.xml
