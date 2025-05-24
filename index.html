@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muфельні печі на замовлення | DarkAge</title>
+  <title>Муфельні печі на замовлення | DarkAge</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -139,13 +139,22 @@
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
-    .card img {
-      width: 100%; 
-      height: 200px; 
-      object-fit: cover; 
-      border-radius: 5px; 
-      margin-bottom: 1rem;
+    .product-image {
+      width: 100%;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      background: #f9f9f9;
+      border-radius: 5px;
+      overflow: hidden;
       border: 1px solid #eee;
+    }
+    .product-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
     }
     .contact form { 
       display: grid; 
@@ -234,6 +243,10 @@
       .grid {
         grid-template-columns: 1fr;
       }
+      
+      .product-image {
+        height: 200px;
+      }
     }
   </style>
 </head>
@@ -252,7 +265,7 @@
 
   <section class="hero">
     <div>
-      <h1>Muфельні печі на замовлення</h1>
+      <h1>Муфельні печі на замовлення</h1>
       <p>Надійність. Якість. Індивідуальний підхід. Виготовляємо професійні муфельні печі для лабораторій, виробництва та творчості.</p>
       <a href="#contact" class="btn-primary">Замовити консультацію</a>
     </div>
@@ -292,8 +305,8 @@
     <h2 class="section-title">Наша продукція</h2>
     <div class="grid">
       <div class="card">
-        <div class="main-product-image">
-          <img src="img/shahtna-main.jpg" alt="Шахтна муфельна піч DarkAge" loading="lazy">
+        <div class="product-image">
+          <img src="img/shahtna.jpg" alt="Шахтна муфельна піч DarkAge" loading="lazy">
         </div>
         <h3>Шахтна піч</h3>
         <p>Вертикальне завантаження для зручності роботи</p>
@@ -305,12 +318,6 @@
           <li>Матеріал муфеля: вогнетривка кераміка</li>
         </ul>
         
-        <div class="product-gallery">
-          <img src="img/shahtna-1.jpg" alt="Шахтна піч - вид збоку" loading="lazy">
-          <img src="img/shahtna-2.jpg" alt="Шахтна піч - внутрішня камера" loading="lazy">
-          <img src="img/shahtna-3.jpg" alt="Шахтна піч - панель управління" loading="lazy">
-        </div>
-        
         <div class="tech-specs">
           <h4>Технічні особливості:</h4>
           <p>Ідеальна для термообробки металу, кераміки та інших матеріалів. Оснащена цифровим контролером температури.</p>
@@ -318,8 +325,8 @@
       </div>
       
       <div class="card">
-        <div class="main-product-image">
-          <img src="img/kamerna-main.jpg" alt="Камерна муфельна піч DarkAge" loading="lazy">
+        <div class="product-image">
+          <img src="img/kamerna.jpg" alt="Камерна муфельна піч DarkAge" loading="lazy">
         </div>
         <h3>Камерна піч</h3>
         <p>Горизонтальне завантаження для зручності</p>
@@ -331,12 +338,6 @@
           <li>Час нагріву: від 15 до 30 хв до 1000°C (Що знанчно економить електроенергію)</li>
         </ul>
         
-        <div class="product-gallery">
-          <img src="img/kamerna-1.jpg" alt="Камерна піч - закрита" loading="lazy">
-          <img src="img/kamerna-2.jpg" alt="Камерна піч - процес роботи" loading="lazy">
-          <img src="img/kamerna-3.jpg" alt="Камерна піч - зразок виробу" loading="lazy">
-        </div>
-        
         <div class="tech-specs">
           <h4>Технічні особливості:</h4>
           <p>Підходить для лабораторій та виробництва. Має вбудовану систему безпеки та термопару для точних вимірювань.</p>
@@ -344,8 +345,8 @@
       </div>
       
       <div class="card">
-        <div class="main-product-image">
-          <img src="img/laboratorna-main.jpg" alt="Лабораторна муфельна піч DarkAge" loading="lazy">
+        <div class="product-image">
+          <img src="img/laboratorna.jpg" alt="Лабораторна муфельна піч DarkAge" loading="lazy">
         </div>
         <h3>Лабораторна піч</h3>
         <p>Компактна та точна для професійного використання</p>
@@ -356,12 +357,6 @@
           <li>Програмування: до 10 етапів</li>
           <li>Енергоспоживання: від 1,5 до 30 кВт</li>
         </ul>
-        
-        <div class="product-gallery">
-          <img src="img/laboratorna-1.jpg" alt="Лабораторна піч - загальний вигляд" loading="lazy">
-          <img src="img/laboratorna-2.jpg" alt="Лабораторна піч - інтерфейс" loading="lazy">
-          <img src="img/laboratorna-3.jpg" alt="Лабораторна піч - порівняння розмірів" loading="lazy">
-        </div>
         
         <div class="tech-specs">
           <h4>Технічні особливості:</h4>
